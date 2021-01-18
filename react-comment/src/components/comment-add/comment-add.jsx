@@ -13,6 +13,7 @@ export default class CommentAdd extends Component {
             content: ''
         }
     }
+
     handelSubmit = () => {
         let { name, content } = this.state
         // 收集数据
