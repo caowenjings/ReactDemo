@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>lkeda-sercurity</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <p>text</p>
+        <input type="text">
+        <ul>
+            <li><a href="#/home">home</a></li>
+            <li><a href="#/about">about</a></li>
+
+            <div id="routeView"></div>
+        </ul>
+    </div>
+
+    <!-- 原生JS版前端路由实现：hash模式 -->
+    <!-- 
+    hash 是 URL 中 hash (#) 及后面的那部分，改变 URL 中的 hash 部分不会引起页面刷新
+    通过 hashchange 事件监听 URL 的变化，
+    改变 URL 的方式只有这几种：1.通过浏览器前进后退改变 URL
+                           2.通过<a>标签改变 URL
+                           3.通过window.location改变URL
+     -->
+
+    <script type="text/javascript">
+        var routerView = null
+
+        function onLoad() {
+            routerView = document.querySelector('#routeView')
+            onHashChange()
+        }
+
+        window.addEventListener('DOMContentLoaded', onLoad)// 页面加载完不会触发 hashchange，这里主动触发一次 hashchange 事件
+        window.addEventListener('hashchange', onHashChange) // 监听路由变化
+
+
+        function onHashChange() { // 路由变化时，根据路由渲染对应 UI
+            console.log(location)
+            switch (location.hash) {
+                case '#/home':
+                    routerView.innerHTML = 'Home'
+                    return
+                case '#/about':
+                    routerView.innerHTML = 'About'
+                    return
+                default:
+                    return
+            }
+        }
+    </script>
+</body>
+
+</html>

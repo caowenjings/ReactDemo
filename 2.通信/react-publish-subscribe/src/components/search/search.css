@@ -1,0 +1,23 @@
+header {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 120px;
+}
+
+header h1 {
+    margin: 10px 0;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+}
+
+.search input {
+    height: 30px;
+}
+
+.search button {
+    height: 35px;
+}

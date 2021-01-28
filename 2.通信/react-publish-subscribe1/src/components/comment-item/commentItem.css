@@ -1,0 +1,20 @@
+.list-group-item {
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    border: 1px solid #f7f7f7;
+}
+
+.handle {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.contant {
+    margin-left: 60px;
+    margin-top: 0;
+}

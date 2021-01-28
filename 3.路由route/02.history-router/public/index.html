@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>lkeda-sercurity</title>
+  <style>
+  </style>
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+
+</head>
+
+<body>
+  <div id="app">
+    <p>text</p>
+    <input type="text">
+    <ul>
+      <li><a href="/text0">text0</a></li><!-- a标签与push 的区别就是会请求服务器 -->
+
+      <li><button onclick="push('/text2')">push text2</button></li>
+
+      <li><button onclick="goBack()">回退</button></li><!-- 与浏览器的前进后退一致 -->
+      <li><button onclick="goforward()">前进</button></li>
+      <li><button onclick="replace('/text3')">repalce tests</button></li>
+
+      <div id="routeView"></div>
+    </ul>
+  </div>
+  <!-- 基于 history 实现 -->
+  <!-- 可以使用原生的history，也可以使用history库 -->
+  <!-- 
+
+  history 提供了pushState，replaceState，这两个方法改变 URL 的 path 部分不会引起页面刷新
+
+  history 提供类似 hashchange 事件的 popstate 事件，但通过浏览器前进后退改变 URL 时会触发 popstate事件，
+  通过pushState/replaceState或<a>标签改变 URL 不会触发 popstate 事件。
+  好在我们可以拦截 pushState/replaceState的调用和<a>标签的点击事件来检测 URL 变化，所以监听
+  URL 变化可以实现，只是没有 hashchange 那么方便。
+    
+-->
+  <script type="text/javascript" src="https://cdn.bootcss.com/history/4.7.2/history.js"></script>
+  <script type="text/javascript">
+    let history = History.createBrowserHistory();
+
+    function push(to) {
+      history.push(to);
+      return false
+    }
+    function goBack() {
+      history.goBack();
+    }
+    function goforward() {
+      history.goForward()
+    }
+    function replace(to) {
+      history.replace(to);
+    }
+
+    history.listen((location) => {
+      console.log('请求路径变化了', location)
+    })
+
+
+
+  </script>
+</body>
+
+</html>

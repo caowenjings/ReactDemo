@@ -1,0 +1,10 @@
+.logo {
+    width: 200px;
+    height: 200px;
+}
+
+.title {
+    font-size: 28px;
+    color: red;
+    margin-left: 60px;
+}

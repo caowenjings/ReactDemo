@@ -1,0 +1,27 @@
+.col-md-4 {
+    width: 40%;
+    margin-top: 15px;
+    box-sizing: border-box;
+}
+
+button {
+    float: right;
+    margin-right: 17%;
+    margin-top: 10px;
+}
+
+.form-group {
+    margin-top: 10px;
+}
+
+input {
+    height: 30px;
+    width: 80%;
+    margin-top: 10px;
+}
+
+textarea {
+    width: 80.5%;
+    margin-top: 10px;
+
+}
