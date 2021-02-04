@@ -1,0 +1,12 @@
+.home-container {
+    width: 100%
+}
+
+.message-item {
+    display: flex;
+    margin-top: 10px;
+}
+
+.message-item button {
+    margin-left: 20px;
+}

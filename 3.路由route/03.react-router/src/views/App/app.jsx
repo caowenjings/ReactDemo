@@ -40,7 +40,7 @@ export default class App extends Component {
                                 <NavLink className="list-group-item" to="/about">About</NavLink> */}
                             </div>
                         </div>
-                        <div className="col-xs-6">
+                        <div className="col-xs-10">
                             <div className="panel">
                                 <div className="panel-body">
                                     <Switch>

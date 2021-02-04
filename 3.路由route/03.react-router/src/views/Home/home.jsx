@@ -33,7 +33,7 @@ export default class Home extends Component {
                             <MyNavLink to="/home/message">Message</MyNavLink>
                         </li>
                     </ul>
-                    <div className="mani">
+                    <div className="main">
                         <Switch>
                             <Route path="/home/news" component={News}></Route>
                             <Route path="/home/message" component={Message}></Route>
